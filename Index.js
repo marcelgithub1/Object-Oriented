@@ -1,36 +1,8 @@
-//Declarando classe cliente
-class Client{
-    name;
-    cpf;
-    rg;
-};
-//Declarando classe conta corrente
-class CheckingCount {
-    agency;
-    //private attribute
-    _value = 0;
-
-    //Metodo Deposito
-    deposit(money){
-        if(money <= 0) return  console.log(`Valor ${money} é inválido.`);
-        this._value += money;
-        console.log(`Você depositou ${money}, saldo atual: ${this._value}`);        
-    };
-
-    //Metodo Saque
-    withdraw(money){
-        if(this._value >= money){
-            this._value -= money;
-            console.log(`Você sacou ${money} e seu saldo atual é ${this._value}.`)
-            return money;
-        }else {    
-            console.log('Você não possue saldo suficente;')
-        }
-    };
-};
+import{Client} from "./Client.js";
+import{CheckingCount} from "./CheckingCount.js";
 
 const client1 = new Client();
-client1.name = 'Marcelo';
+client1.name = 'Marcelo Augusto';
 client1.cpf = 43322214093;
 client1.rg = 8462134896;
 
