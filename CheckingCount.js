@@ -1,6 +1,8 @@
 //Declarando classe conta corrente
 export class CheckingCount {
     agency;
+    client;
+
     //Atributo Privado
     _value = 0;
 
@@ -8,7 +10,7 @@ export class CheckingCount {
     deposit(money){
         if(money <= 0) return  console.log(`Valor ${money} é inválido.`);
         this._value += money;
-        console.log(`Você depositou ${money}, saldo atual: ${this._value}`);        
+        return console.log(`Você depositou ${money}, saldo atual: ${this._value}`);        
     };
 
     //Metodo Saque
@@ -21,4 +23,10 @@ export class CheckingCount {
             console.log('Você não possue saldo suficente;')
         }
     };
+
+    //Metodo Transferência
+    transfer(money, account){ 
+        const moneyTransf = this.withdraw(money);
+        account.deposit(moneyTransf);
+    }
 };
