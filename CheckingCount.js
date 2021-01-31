@@ -2,6 +2,7 @@ import { Client } from "./Client.js";
 
 //Declarando classe conta corrente
 export class CheckingCount {
+    //Contador de contas
     static countAcc = 0;
     agency;
     _client;
